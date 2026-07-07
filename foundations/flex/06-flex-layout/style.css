@@ -1,10 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
   font-family: Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* This is an alternative solution that I came up with. It uses justify-content: space-between; in the body instead of
+     flex: 1; and justify-content: center; inside .content. It works and optically it is the same. However, the difference
+     is visible in the dev tools. justify-content: space-between;, as it says, leaves space between .content and its siblings
+     and flex: 1 on .content makes it so .content takes up this available space which looks much better (can easily be seen
+     by giving .content a background-color).
+  */
 }
 
 img {
@@ -16,6 +25,7 @@ button {
   border: none;
   border-radius: 8px;
   background: #eee;
+  padding: 8px 16px;
 }
 
 input {
@@ -23,4 +33,37 @@ input {
   border-radius: 16px;
   padding: 8px 24px;
   width: 400px;
+}
+
+.header,
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  justify-content: center;
+}
+
+.footer {
+  background-color: #eeeeee;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: oklch(0.551 0.027 264.364);
 }
